@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+@if (!ViewBag.IsLoggedIn)
+{
+        <p>Giriş yapmanız gerekiyor. <a href="/Auth/Login">Buraya tıklayın</a></p>
+}
+else
+{
+        <p>Hoş geldiniz, @ViewBag.UserName!</p>
+        <a href="/Home/Logout">Çıkış Yap</a>
+
+        <h2>Filmler</h2>
+        <table>
+            <tr>
+                <th>Film Adı</th>
+                <th>Yönetmen</th>
+                <th>Detay</th>
+            </tr>
+        @foreach (var movie in Model)
+        {
+                    <tr>
+                        <td>@movie.Title</td>
+                        <td>@movie.Director</td>
+                        <td><a href='/Movie/Details/@movie.MovieID'>Detay</a></td>
+                    </tr>
+        }
+        </table>
+}

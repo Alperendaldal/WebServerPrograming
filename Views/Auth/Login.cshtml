@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Giriş Yap";
+}
+
+<h2>Giriş Yap</h2>
+@if (ViewBag.ErrorMessage != null)
+{
+    <p style="color: red;">@ViewBag.ErrorMessage</p>
+}
+
+<form method="post">
+    <input type="text" name="firstName" placeholder="Adınız" required />
+    <input type="text" name="lastName" placeholder="Soyadınız" required />
+    <button type="submit">Giriş Yap</button>
+</form>
