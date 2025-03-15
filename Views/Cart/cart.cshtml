@@ -1,0 +1,30 @@
+﻿@model List<WebServerPrograming.Models.Movie>
+
+@{
+    ViewData["Title"] = "Your Cart";
+}
+
+@if (Model == null || !Model.Any())
+{
+    <div class="alert alert-info">Your cart is empty.</div>
+}
+else
+{
+    <h2>Your Cart</h2>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Cover Image</th>
+        </tr>
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td>@movie.Title</td>
+                <td>@movie.Director</td>
+                <td><img src="@Url.Content(movie.ImageUrl)" alt="Movie Cover" style="max-width: 100px;" /></td>
+            </tr>
+        }
+    </table>
+    <a href="/">Go to HomePage</a>
+}
