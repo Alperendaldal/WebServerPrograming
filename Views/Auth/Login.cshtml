@@ -1,15 +1,20 @@
 ﻿@{
-    ViewData["Title"] = "Giriş Yap";
+    ViewData["Title"] = "Login";
 }
 
-<h2>Giriş Yap</h2>
-@if (ViewBag.ErrorMessage != null)
-{
-    <p style="color: red;">@ViewBag.ErrorMessage</p>
-}
+<link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
 
-<form method="post">
-    <input type="text" name="firstName" placeholder="Adınız" required />
-    <input type="text" name="lastName" placeholder="Soyadınız" required />
-    <button type="submit">Giriş Yap</button>
-</form>
+<div class="login-container">
+    <h1>Please Log in!</h1>
+    <form method="post" action="/Auth/Login">
+        <div class="input-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="FirstName" required />
+        </div>
+        <div class="input-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="LastName" required />
+        </div>
+        <button type="submit" class="login-btn">Login</button>
+    </form>
+</div>
