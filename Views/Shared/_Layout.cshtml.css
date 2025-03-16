@@ -1,48 +1,113 @@
-﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿/* Layout-specific Styles */
+/* General Styles */
+html {
+    font-size: 14px;
 }
 
-a {
-  color: #0077cc;
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #181A1B;
+    color: #fff; 
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+/* Navbar Styles */
+.navbar-dark.bg-dark {
+    background-color: #181A1B !important; 
+    border-bottom: 2px solid #ffd700;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+.navbar-brand.text-gold,
+.nav-link.text-gold {
+    color: #ffd700 !important;
 }
 
+    .nav-link.text-gold:hover {
+        color: #b8860b !important; 
+    }
+
+/* Button Styles */
+.btn-gold {
+    background-color: #181A1B; 
+    color: #ffd700;
+    margin-left: 10px;
+    border: 2px solid #ffd700;
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    font-size: 14px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+    .btn-gold:hover {
+        background-color: #ffd700; 
+        color: #181A1B; 
+    }
+
+/* Container Styles */
+.container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px;
+}
+
+/* Box Shadow */
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 2px 4px rgba(255, 215, 0, 0.1); 
 }
 
+/* Links */
+a {
+    color: #ffd700; 
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #b8860b; 
+        text-decoration: underline;
+    }
+
+    /* Navbar Brand */
+    a.navbar-brand {
+        white-space: normal;
+        text-align: center;
+        word-break: break-all;
+        color: #ffd700 !important; 
+    }
+
+/* Primary Button Override */
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    text-decoration: none;
+}
+
+/* Nav Pills */
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    text-decoration: none;
+}
+
+/* Borders */
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Policy Button */
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+    font-size: 1rem;
+    line-height: inherit;
 }

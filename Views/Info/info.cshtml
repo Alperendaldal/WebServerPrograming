@@ -9,20 +9,39 @@
     <div class="alert alert-warning">@TempData["Message"]</div>
 }
 
-// Resimleri yüklemek için Url.Content kullandım wwwroota Images folder açıp.
+<link rel="stylesheet" href="~/css/info.css" asp-append-version="true" />
+
 @if (Model != null)
 {
     <div class="movie-info">
+        <div class="top-nav-buttons">
+            <button onclick="window.location.href='/'" class="go-to-home">HomePage</button>
+            @if (ViewBag.IsLoggedIn)
+            {
+                <button onclick="window.location.href='/Cart/Cart'" class="go-to-cart">Cart</button>
+            }
+            else
+            {
+                <button onclick="alert('Please sign in to access your cart.');" class="go-to-cart">Cart</button>
+            }
+        </div>
+
         <img src="@Url.Content(Model.ImageUrl)" alt="Movie Cover" style="max-width: 200px;" />
         <h2>@Model.Title</h2>
         <p>Director: @Model.Director</p>
         <p>Stars: @Model.Stars</p>
         <p>Release Year: @Model.ReleaseYear</p>
-        <form method="post" action="@Url.Action("AddToCart", "Info", new { id = Model.MovieID })">
-            <button type="submit">Add to Cart</button>
-        </form>
-        <a href="/Cart/Cart">Go to Cart</a>
-        <a href="/">Go to HomePage</a>
+
+        @if (ViewBag.IsLoggedIn)
+        {
+            <form method="post" action="@Url.Action("AddToCart", "Info", new { id = Model.MovieID })">
+                <button type="submit">Add to Cart</button>
+            </form>
+        }
+        else
+        {
+            <button onclick="alert('Please sign in to add this movie to your cart.');">Add to Cart</button>
+        }
     </div>
 }
 else

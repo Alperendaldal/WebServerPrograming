@@ -1,30 +1,18 @@
 ﻿@{
-    ViewData["Title"] = "Ana Sayfa";
+    ViewData["Title"] = "Home";
 }
 
 <link rel="stylesheet" href="~/css/HomePage.css" asp-append-version="true" />
 
-
-
-@if (!ViewBag.IsLoggedIn)
-{
-    <div class="login-warning">
-        <p>Giriş yapmanız gerekiyor.</p>
-        <a href="/Auth/Login" class="login-btn-large">Buraya tıklayın</a>
-    </div>
-}
-else
-{
-    <h2>Filmler</h2>
-    <div class="movie-container">
-        @foreach (var movie in Model)
-        {
-            <div class="movie-card">
-                <img src="@Url.Content(movie.ImageUrl)" alt="Movie Cover" style="max-width: 100px;" />
-                <h3>@movie.Title</h3>
-                <p>Yönetmen: @movie.Director</p>
-                <a href="/Info/info/@movie.MovieID">Detay</a>
-            </div>
-        }
-    </div>
-}
+<h2>Movies</h2>
+<div class="movie-container">
+    @foreach (var movie in Model)
+    {
+        <div class="movie-card">
+            <img src="@Url.Content(movie.ImageUrl)" alt="Movie Cover" />
+            <h3>@movie.Title</h3>
+            <p>Director: @movie.Director</p>
+            <a href="/Info/info/@movie.MovieID" class="detay-btn">Details</a>
+        </div>
+    }
+</div>
