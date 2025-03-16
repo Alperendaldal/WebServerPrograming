@@ -2,29 +2,29 @@
     ViewData["Title"] = "Ana Sayfa";
 }
 
+<link rel="stylesheet" href="~/css/HomePage.css" asp-append-version="true" />
+
+
+
 @if (!ViewBag.IsLoggedIn)
 {
-    <p>Giriş yapmanız gerekiyor. <a href="/Auth/Login">Buraya tıklayın</a></p>
+    <div class="login-warning">
+        <p>Giriş yapmanız gerekiyor.</p>
+        <a href="/Auth/Login" class="login-btn-large">Buraya tıklayın</a>
+    </div>
 }
 else
 {
-    <p>Hoş geldiniz, @ViewBag.UserName!</p>
-    <a href="/Home/Logout">Çıkış Yap</a>
-
     <h2>Filmler</h2>
-    <table>
-        <tr>
-            <th>Film Adı</th>
-            <th>Yönetmen</th>
-            <th>Detay</th>
-        </tr>
+    <div class="movie-container">
         @foreach (var movie in Model)
         {
-            <tr>
-                <td>@movie.Title</td>
-                <td>@movie.Director</td>
-                <td><a href="/Info/info/@movie.MovieID">Detay</a></td>
-            </tr>
+            <div class="movie-card">
+                <img src="@Url.Content(movie.ImageUrl)" alt="Movie Cover" style="max-width: 100px;" />
+                <h3>@movie.Title</h3>
+                <p>Yönetmen: @movie.Director</p>
+                <a href="/Info/info/@movie.MovieID">Detay</a>
+            </div>
         }
-    </table>
+    </div>
 }

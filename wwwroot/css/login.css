@@ -1,0 +1,57 @@
+﻿
+body {
+    background-color: #000;
+    background-image: url('/images/background-pattern.png'); 
+    background-size: cover;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+
+.login-container {
+    width: 350px;
+    background: black;
+    padding: 20px;
+    margin: 100px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+    .input-group label {
+        display: block;
+        font-size: 14px;
+        color: orange;
+        margin-bottom: 5px;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    .login-btn:hover {
+        background-color: gray;
+    }
