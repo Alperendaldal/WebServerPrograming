@@ -1,0 +1,91 @@
+﻿/* Info Styles */
+.movie-info {
+    border-radius: 8px;
+    max-width: 600px;
+    height: 810px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 20px; 
+}
+
+.movie-info img {
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.movie-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.movie-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.movie-info form {
+    margin-top: 20px;
+}
+
+/* Add to Cart Button */
+.movie-info button {
+    background-color: #181A1B;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 16px;
+}
+
+.movie-info button:hover {
+    background-color: #ffd700;
+    color: #181A1B;
+}
+
+/* Top Navigation Buttons */
+.top-nav-buttons {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-nav-buttons button {
+    background-color: #181A1B;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    text-decoration: none;
+}
+
+.top-nav-buttons button:hover {
+    background-color: #ffd700;
+    color: #181A1B;
+}
+
+.top-nav-buttons .go-to-cart::after {
+    content: " →";
+}
+
+.top-nav-buttons .go-to-home::before {
+    content: "← ";
+}

@@ -1,22 +1,103 @@
+﻿/* General Styles */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #181A1B;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    font-family: Arial, sans-serif;
+    background-color: #181A1B;
+    color: #fff;
 }
+
+/* Message Styles */
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.alert-warning {
+    background-color: #ffd700;
+    border-color: #a1a1a1;
+    color: #1a1a1a;
+}
+
+.alert-danger {
+    background-color: #ffd700;
+    border-color: #a1a1a1;
+    color: #a1a1a1;
+}
+
+.alert-info {
+    background-color: #ffd700;
+    border-color: #a1a1a1;
+    color: #a1a1a1;
+}
+/* Error Container */
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-color: #181A1B; 
+    color: #fff; 
+    padding: 20px;
+    text-align: center;
+}
+
+/* Error Message */
+.error-message {
+    background-color: #1a1a1a; 
+    padding: 20px;
+    border-radius: 8px; 
+    border: 2px solid #ffd700; 
+    max-width: 600px; 
+    width: 100%;
+}
+
+    .error-message h2 {
+        color: #ffd700; 
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .error-message p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        color: #fff; 
+    }
+
+/* Button Styles */
+.btn-gold {
+    background-color: #181A1B; 
+    color: #ffd700; 
+    border: 2px solid #ffd700; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    .btn-gold:hover {
+        background-color: #ffd700; 
+        color: #181A1B; 
+    }

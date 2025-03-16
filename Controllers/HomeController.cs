@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WebServerPrograming.Models;
 using System.Text.Json;
+using WebServerPrograming.Extensions;
 
 namespace WebServerPrograming.Controllers
 {
@@ -13,13 +14,14 @@ namespace WebServerPrograming.Controllers
             if (string.IsNullOrEmpty(userJson))
             {
                 ViewBag.IsLoggedIn = false;
-                return View();
             }
-
-            // Display user information
-            var user = JsonSerializer.Deserialize<User>(userJson);
-            ViewBag.IsLoggedIn = true;
-            ViewBag.UserName = $"{user.FirstName} {user.LastName}";
+            else
+            {
+                // Display user information
+                var user = JsonSerializer.Deserialize<User>(userJson);
+                ViewBag.IsLoggedIn = true;
+                ViewBag.UserName = $"{user.FirstName} {user.LastName}";
+            }
 
             // Create and store movies in session if they don't exist
             if (HttpContext.Session.GetString("Movies") == null)
@@ -44,6 +46,15 @@ namespace WebServerPrograming.Controllers
         {
             // Clear the cookie
             Response.Cookies.Delete("UserInfo");
+
+            // Clear the cart for the user from the dictionary
+            string userJson = Request.Cookies["UserInfo"];
+            if (!string.IsNullOrEmpty(userJson))
+            {
+                var user = JsonSerializer.Deserialize<User>(userJson);
+                UserCartStorage.UserCarts.Remove(user.UserId); // Remove the user's cart
+            }
+
             return RedirectToAction("Index");
         }
     }
